@@ -17,9 +17,9 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [
-    AppComponent,
-    TransacaoFormComponent,
-    TransacaoListComponent,
+    // AppComponent,
+    // TransacaoFormComponent,
+    // TransacaoListComponent,
   ],
   imports: [
     BrowserModule,
@@ -29,6 +29,6 @@ const routes: Routes = [
   providers: [
     provideHttpClient(), // Adicionar o HttpClient
   ],
-  bootstrap: [AppComponent]
+  // bootstrap: [AppComponent]
 })
 export class AppModule { }
