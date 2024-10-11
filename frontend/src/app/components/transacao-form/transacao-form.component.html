@@ -1,0 +1,20 @@
+<form [formGroup]="transacaoForm" (ngSubmit)="onSubmit()">
+  <label for="descricao">Descreva sua transação:</label>
+  <label for="descricao">"Exemplo: "Venda de Imóvel."</label>
+  <input id="descricao" formControlName="descricao" placeholder="Descrição" required />
+  
+  <label for="valor">Valor</label>
+  <input id="valor" type="number" formControlName="valor" placeholder="Valor" required />
+  
+  <label for="tipo">Tipo</label>
+  <select id="tipo" formControlName="tipo">
+    <option value="receita">Receita</option>
+    <option value="despesa">Despesa</option>
+  </select>
+
+  <label for="categoria">Preencha uma categoria:</label>
+  <label for="categoria">Exemplo: "Negócio Imobiliário"</label>
+  <input id="categoria" formControlName="categoria" placeholder="Categoria" />
+
+  <button type="submit" [disabled]="transacaoForm.invalid">Adicionar Transação</button>
+</form>

@@ -1,0 +1,124 @@
+/* Definindo estilos globais para uma melhor apresentação */
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+  }
+  
+  .main {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  .left-side {
+    width: 60%;
+    padding-right: 20px;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  p {
+    font-size: 1.2rem;
+    color: #666;
+  }
+  
+  .angular-logo {
+    width: 150px;
+    height: auto;
+    margin-bottom: 20px;
+  }
+  
+  .transacao-form {
+    margin-bottom: 20px;
+  }
+  
+  .right-side {
+    width: 35%;
+    padding-left: 20px;
+    background-color: #fff;
+    border-left: 2px solid #ddd;
+  }
+  
+  .divider {
+    width: 2px;
+    background-color: #ddd;
+    margin: 0 20px;
+  }
+  
+  /* Estilizando o link GitLab */
+  .social-links a {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    color: #3498db;
+    text-decoration: none;
+  }
+  
+  .social-links a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Estilo para a lista de transações */
+  .transacao-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  .transacao-table th, .transacao-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  .transacao-table th {
+    background-color: #f2f2f2;
+  }
+  
+  /* Estilo para o formulário */
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  form label {
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  form input, form select {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  form button {
+    padding: 10px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  form button:hover {
+    background-color: #218838;
+  }
+  

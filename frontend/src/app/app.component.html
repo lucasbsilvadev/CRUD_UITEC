@@ -1,0 +1,25 @@
+<main class="main">
+  <div class="content">
+    <div class="left-side">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 982 239" fill="none" class="angular-logo">
+        <!-- Aqui vai o conteúdo SVG -->
+      </svg>
+      <h1>CRUD de Transações Financeiras</h1>
+      <p>Realize registros de transações financeiras e gerencie suas finanças.</p>
+
+      <!-- Exibir o formulário de transação -->
+      <app-transacao-form (transacaoAdded)="onTransacaoAdded($event)"></app-transacao-form>
+      
+      <router-outlet></router-outlet>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="right-side">
+      <p>Caso deseje ver mais projetos:</p>
+      <div class="social-links">
+        <a href="https://gitlab.com" target="_blank">GitHub</a>
+      </div>
+    </div>
+  </div>
+</main>
