@@ -17,9 +17,9 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [
-    // AppComponent,
-    // TransacaoFormComponent,
-    // TransacaoListComponent,
+     AppComponent,
+     TransacaoFormComponent,
+     TransacaoListComponent,
   ],
   imports: [
     BrowserModule,

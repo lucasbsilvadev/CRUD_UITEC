@@ -1,10 +1,8 @@
-<tr>
-    <td>{{ transacao.descricao }}</td>
-    <td>{{ transacao.valor }}</td>
-    <td>{{ transacao.tipo }}</td>
-    <td>
-      <button (click)="deleteTransacao(transacao.id)">Excluir</button>
-      <button (click)="editTransacao(transacao)">Editar</button>
-    </td>
-  </tr>
-  
+<div>
+  <h4>{{ transacao.descricao }}</h4>
+  <p>Valor: {{ transacao.valor }}</p>
+  <p>Tipo: {{ transacao.tipo }}</p>
+  <p>Categoria: {{ transacao.categoria }}</p>
+  <button (click)="editTransacao()">Editar</button>
+  <button (click)="deleteTransacao()">Deletar</button>
+</div>

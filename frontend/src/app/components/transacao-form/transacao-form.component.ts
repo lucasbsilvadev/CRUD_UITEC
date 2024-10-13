@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms'; 
+import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { TransactionService } from '../../services/transaction.service'; // Importar o serviço
 
 @Component({
   selector: 'app-transacao-form',
@@ -12,7 +13,7 @@ export class TransacaoFormComponent {
   transacaoForm: FormGroup;
   @Output() transacaoAdded = new EventEmitter<any>(); // Emissor para notificar o componente pai
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private transactionService: TransactionService) { // Injetar o serviço
     this.transacaoForm = this.fb.group({
       descricao: [''],
       valor: [0],
@@ -23,7 +24,17 @@ export class TransacaoFormComponent {
 
   onSubmit() {
     const newTransacao = this.transacaoForm.value;
-    this.transacaoAdded.emit(newTransacao); // Emitir o evento para o pai
-    this.transacaoForm.reset(); // Resetar o formulário após o envio
+
+    // Chamar o serviço para criar uma nova transação
+    this.transactionService.createTransaction(newTransacao).subscribe({
+      next: (response) => {
+        console.log('Transação criada com sucesso!', response);
+        this.transacaoAdded.emit(response); // Emitir o evento com a nova transação do backend
+        this.transacaoForm.reset(); // Resetar o formulário após o envio
+      },
+      error: (err) => {
+        console.error('Erro ao criar transação', err);
+      }
+    });
   }
 }

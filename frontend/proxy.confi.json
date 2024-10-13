@@ -1,0 +1,11 @@
+{
+    "/api": {
+      "target": "http://localhost/CRUD_UITEC/backend/routes/",
+      "secure": false,
+      "changeOrigin": true,
+      "pathRewrite": {
+        "^/api": ""
+      }
+    }
+  }
+  
