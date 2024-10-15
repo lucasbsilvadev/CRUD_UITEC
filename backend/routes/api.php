@@ -1,17 +1,18 @@
 <?php
 // Headers CORS
-header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS");
-header("Access-Control-Allow-Origin: http://localhost:4200");
+header("Access-Control-Allow-Origin: *"); 
 header("Access-Control-Allow-Credentials: true");
+header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS");
 header("Access-Control-Allow-Headers: Content-Type, Authorization");
+
 
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     header("HTTP/1.1 200 OK");
     exit();
 }
 
-require_once '../config/database.php'; // Inclui a configuração do banco de dados
-require_once '../controllers/TransacaoController.php';
+require_once './config/database.php'; // Inclui a configuração do banco de dados
+require_once './controllers/TransacaoController.php';
 
 $controller = new TransacaoController($pdo); // Passa a conexão PDO para o controlador
 $request_method = $_SERVER["REQUEST_METHOD"];

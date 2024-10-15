@@ -1,5 +1,5 @@
 <?php
-require_once '../config/database.php';
+require_once './config/database.php';
 
 class TransacaoController {
     private $pdo;
@@ -34,7 +34,7 @@ class TransacaoController {
         $stmt->bindParam(':categoria', $categoria);
         
         if ($stmt->execute()) {
-            echo json_encode(['message' => 'Transação criada com sucesso.']);
+            echo json_encode(['message' => 'Transação criada com sucesso.' ]);
         } else {
             echo json_encode(['message' => 'Erro ao criar transação.']);
         }

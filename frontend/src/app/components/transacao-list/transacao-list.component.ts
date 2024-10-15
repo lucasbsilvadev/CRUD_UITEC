@@ -21,7 +21,7 @@ export class TransacaoListComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getTransacoes();  // Carregar transações ao iniciar o componente
+    this.getTransacoes();  
   }
 
   getTransacoes() {

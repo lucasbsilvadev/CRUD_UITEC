@@ -7,7 +7,8 @@ import { Transaction } from '../models/transaction.model';
   providedIn: 'root'
 })
 export class TransactionService {
-  private apiUrl = 'http://localhost/CRUD_UITEC/backend/routes/api.php/transacoes/';
+  // Corrija a URL para usar o localhost, apontando para o backend
+  private apiUrl = 'http://localhost:8000/';
 
   constructor(private http: HttpClient) {}
 
@@ -19,14 +20,14 @@ export class TransactionService {
   // POST: Criar uma nova transação
   createTransaction(transaction: Transaction): Observable<any> {
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
-    const body = JSON.stringify(transaction); // Transformar o objeto em JSON
-    return this.http.post(`${this.apiUrl}create`, body, { headers }); // Ajustar a URL, se necessário
+    const body = JSON.stringify(transaction); 
+    return this.http.post(`${this.apiUrl}create`, body, { headers }); 
   }
 
   // PUT: Atualizar uma transação existente
   updateTransaction(id: number, transaction: Transaction): Observable<any> {
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
-    const body = JSON.stringify(transaction); // Transformar o objeto em JSON
+    const body = JSON.stringify(transaction); 
     return this.http.put(`${this.apiUrl}update?id=${id}`, body, { headers });
   }
 
@@ -35,4 +36,3 @@ export class TransactionService {
     return this.http.delete(`${this.apiUrl}delete?id=${id}`);
   }
 }
-
